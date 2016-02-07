@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="StocksplosionApp">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Stocksplosion's rapid stock analysis tool.">
+		<meta name="author" content="Dan Rodriguez">
+		<link rel="shortcut icon" href="assets/img/logo.png">
+
+        <title>Stocksplosion</title>
+
+        <!-- Installed css -->
+        <!-- End of instlaled tags -->
+
+		<!-- Custom styles for this site -->
+    	<link rel="stylesheet" href="assets/css/main.css">
+        <!-- Custom tags for the head tag -->
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+		<![endif]-->
+
+        <!-- bower:js -->
+        <script src="app/bower_components/jquery/jquery.js"></script>
+        <script src="app/bower_components/es5-shim/es5-shim.js"></script>
+        <script src="app/bower_components/angular/angular.js"></script>
+        <script src="app/bower_components/json3/lib/json3.min.js"></script>
+        <script src="app/bower_components/angular-resource/angular-resource.js"></script>
+        <script src="app/bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="app/bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="app/bower_components/angular-route/angular-route.js"></script>
+        <script src="app/bower_components/angular-animate/angular-animate.js"></script>
+        <script src="app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+        <script src="app/bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+        <script src="app/bower_components/lodash/lodash.js"></script>
+        <script src="app/bower_components/restangular/dist/restangular.js"></script>
+        <!-- endbower -->
+	</head>
+	<body>
+
+        <div ng-view></div>
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="app/app.js"></script>
+        <!-- endbuild -->
+    </body>
+</html>
