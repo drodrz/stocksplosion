@@ -1,1 +1,18 @@
 <h1>Stocksplosion!</h1>
+<div angucomplete-alt id="companies"
+                      placeholder="Enter company name or symbol"
+                      pause="100"
+                      selected-object="companySelected"
+                      local-data="companies"
+                      search-fields="name,symbol"
+                      title-field="symbol"
+                      description-field="name"
+                      minlength="1"
+                      input-class="form-control form-control-small"
+                      match-class="highlight">
+
+</div>
+<canvas id="line" class="chart chart-line" chart-data="data"
+        chart-labels="labels" chart-legend="true" chart-series="series"
+        chart-click="onClick" >
+</canvas>

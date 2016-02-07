@@ -6,9 +6,11 @@ var myApp = angular.module('StocksplosionApp', [
     'ngAnimate',
     'ui.bootstrap',
     'restangular',
+    'angucomplete-alt',
+    'chart.js',
 ])
     .config(function(RestangularProvider) {
-        RestangularProvider.setBaseUrl("http://stocksplosion.apsis.io/api/");
+        RestangularProvider.setBaseUrl("http://stocksplosion.apsis.io/api");
     })
     .config(function($httpProvider, $interpolateProvider, $routeProvider) {
         $routeProvider
