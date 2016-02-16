@@ -7,6 +7,9 @@ module.exports = function (grunt) {
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
+  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-karma');
+
   // Define the configuration for all the tasks
   grunt.initConfig({
     // Project settings
@@ -69,7 +72,7 @@ module.exports = function (grunt) {
         options: {
           jshintrc: 'test/.jshintrc'
         },
-        src: ['test/spec/{,*/}*.js']
+        src: ['<%= yeoman.app %>/app/components/**/*.spec.js']
       }
     },
 
@@ -261,8 +264,37 @@ module.exports = function (grunt) {
     // Test settings
     karma: {
       unit: {
-        configFile: 'karma.conf.js',
-        singleRun: true
+        options: {
+          frameworks: ['jasmine'],
+          singleRun: true,
+          browsers: ['PhantomJS'],
+          logLevel: 'INFO',
+          files: [
+            'site/app/bower_components/angular/angular.js',
+            'site/app/bower_components/angular-mocks/angular-mocks.js',
+            'site/app/bower_components/jquery/jquery.js',
+            'site/app/bower_components/es5-shim/es5-shim.js',
+            'site/app/bower_components/angular/angular.js',
+            'site/app/bower_components/json3/lib/json3.min.js',
+            'site/app/bower_components/angular-resource/angular-resource.js',
+            'site/app/bower_components/angular-cookies/angular-cookies.js',
+            'site/app/bower_components/angular-sanitize/angular-sanitize.js',
+            'site/app/bower_components/angular-route/angular-route.js',
+            'site/app/bower_components/angular-animate/angular-animate.js',
+            'site/app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+            'site/app/bower_components/angular-bootstrap/ui-bootstrap.js',
+            'site/app/bower_components/lodash/lodash.js',
+            'site/app/bower_components/restangular/dist/restangular.js',
+            'site/app/bower_components/angucomplete-alt/dist/angucomplete-alt.min.js',
+            'site/app/bower_components/Chart.js/Chart.js',
+            'site/app/bower_components/angular-chart.js/dist/angular-chart.js',
+            'site/app/app.js',
+            'site/app/components/stock/stockController.js',
+            'site/app/components/stock/stockService.js',
+            'site/app/components/**/*.spec.js',
+            'site/app/app.spec.js'
+          ]
+        }
       }
     }
   });
@@ -271,7 +303,7 @@ module.exports = function (grunt) {
     'clean:server',
     'concurrent:test',
     'autoprefixer',
-    'connect:test',
+    //'connect:test',
     'karma'
   ]);
 
@@ -298,5 +330,4 @@ module.exports = function (grunt) {
     'build'
   ]);
 
-  grunt.loadNpmTasks('grunt-contrib-connect');
 };
