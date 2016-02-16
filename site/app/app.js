@@ -1,4 +1,4 @@
-var myApp = angular.module('StocksplosionApp', [
+var stockApp = angular.module('StocksplosionApp', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
@@ -15,8 +15,8 @@ var myApp = angular.module('StocksplosionApp', [
     .config(function($httpProvider, $interpolateProvider, $routeProvider) {
         $routeProvider
         .when("/", {
-            templateUrl: "app/components/home/homeView.html",
-            controller: "homeController",
+            templateUrl: "app/components/stock/stockView.html",
+            controller: "stockController",
         })
         .otherwise({redirectTo: '/'});
     })

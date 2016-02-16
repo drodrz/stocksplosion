@@ -1,4 +1,9 @@
 <h1>Stocksplosion!</h1>
+<div>
+    <p ng-show="advice == 'buy'" class="buy">Buy</p>
+    <p ng-show="advice == 'sell'" class="sell">Sell</p>
+    <p ng-show="advice == 'hold'" class="hold">Hold</p>
+</div>
 <div angucomplete-alt id="companies"
                       placeholder="Enter company name or symbol"
                       pause="100"
@@ -10,9 +15,8 @@
                       minlength="1"
                       input-class="form-control form-control-small"
                       match-class="highlight">
-
 </div>
-<canvas id="line" class="chart chart-line" chart-data="data"
-        chart-labels="labels" chart-legend="true" chart-series="series"
+<canvas id="line" class="chart chart-line" chart-data="graph.data"
+        chart-labels="graph.labels" chart-legend="true" chart-series="series"
         chart-click="onClick" >
 </canvas>
