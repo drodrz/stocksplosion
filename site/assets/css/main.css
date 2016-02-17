@@ -1,0 +1,19 @@
+.navbar-brand {
+    text-transform: uppercase;
+}
+
+.angucomplete-title {
+    font-size: 125%;
+    font-weight: bold;
+}
+
+.angucomplete-dropdown {
+    width:100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.advice {
+    font-size: 150%;
+    font-weight: bold;
+}

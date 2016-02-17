@@ -11,7 +11,9 @@
         <title>Stocksplosion</title>
 
         <!-- Installed css -->
+        <link rel="stylesheet" href="app/bower_components/angucomplete-alt/angucomplete-alt.css">
         <link rel="stylesheet" href="app/bower_components/angular-chart.js/dist/angular-chart.css">
+        <link rel="stylesheet" href="app/bower_components/bootstrap-css-only/css/bootstrap.min.css">
         <!-- End of instlaled tags -->
 
 		<!-- Custom styles for this site -->
@@ -43,7 +45,15 @@
         <script src="app/bower_components/angular-chart.js/dist/angular-chart.js"></script>
         <!-- endbower -->
 	</head>
+
 	<body>
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand active" href="#/">Stocksplosion</a>
+                </div>
+            </div>
+        </div>
 
         <div ng-view></div>
 

@@ -1,22 +1,54 @@
-<h1>Stocksplosion!</h1>
-<div>
-    <p ng-show="advice == 'buy'" class="buy">Buy</p>
-    <p ng-show="advice == 'sell'" class="sell">Sell</p>
-    <p ng-show="advice == 'hold'" class="hold">Hold</p>
+<div class="container">
+    <div class="text-center">
+        <h1>Stocksplosion</h1>
+        <p class="lead">Doing the hard work - so you don't have to</p>
+        <div angucomplete-alt id="companies"
+                              placeholder="Enter company name or symbol"
+                              pause="100"
+                              selected-object="companySelected"
+                              local-data="companies"
+                              search-fields="name,symbol"
+                              title-field="symbol"
+                              description-field="name"
+                              minlength="1"
+                              input-class="form-control form-control-small text-center"
+                              match-class="highlight">
+        </div>
+        <div>
+            <p ng-show="graph.advice" class="alert alert-success advice">{{graph.advice | uppercase }}</p>
+            <!--<p ng-show="graph.advice == 'buy'"  class="alert alert-success fade in">Buy</p>-->
+            <!--<p ng-show="graph.advice == 'sell'" class="alert alert-success">Sell</p>-->
+            <!--<p ng-show="graph.advice == 'hold'" class="alert alert-success">Hold</p>-->
+        </div>
+        <canvas id="line" class="chart chart-line"
+                chart-data="graph.data"
+                chart-labels="graph.labels"
+                chart-legend="false"
+                chart-series="series"
+                chart-click="onClick" >
+        </canvas>
+        <div class="panel panel-info" ng-show="graph">
+            <div class="panel-heading">
+                <h3 class="panel-title panel-info">Performance Summary (Past {{graph.labels.length}} days)</h3>
+            </div>
+            <table class="table">
+                <tr>
+                    <td>Current Price</td>
+                    <td>{{graph.current | number:0}}</td>
+                </tr>
+                <tr>
+                    <td>Minimum</td>
+                    <td>{{graph.max | number:0}}</td>
+                </tr>
+                <tr>
+                    <td>Maximum</td>
+                    <td>{{graph.min | number:0}}</td>
+                </tr>
+                <tr>
+                    <td>Average</td>
+                    <td>{{graph.avg | number:0}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </div>
-<div angucomplete-alt id="companies"
-                      placeholder="Enter company name or symbol"
-                      pause="100"
-                      selected-object="companySelected"
-                      local-data="companies"
-                      search-fields="name,symbol"
-                      title-field="symbol"
-                      description-field="name"
-                      minlength="1"
-                      input-class="form-control form-control-small"
-                      match-class="highlight">
-</div>
-<canvas id="line" class="chart chart-line" chart-data="graph.data"
-        chart-labels="graph.labels" chart-legend="true" chart-series="series"
-        chart-click="onClick" >
-</canvas>
