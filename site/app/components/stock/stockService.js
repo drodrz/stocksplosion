@@ -20,12 +20,13 @@ angular.module('StocksplosionApp')
             'calcAdvice': function(val, avg) {
                 var advice = 'hold';
 
-                if (val/avg >= 1.1) {
+                if (val/avg >= 1.03) {
                     advice = 'sell';
-                } else if (val/avg <= 0.9) {
+                } else if (val/avg <= 0.97) {
                     advice = 'buy';
                 }
 
+                console.log('ratio:', val, avg, val/avg);
                 return advice;
             },
             'analyzeStock': function(prices) {
@@ -63,7 +64,11 @@ angular.module('StocksplosionApp')
                 return {
                     'labels': labels,
                     'data': [prices],
-                    'advice': stock.analyzeStock(prices)
+                    'advice': stock.analyzeStock(prices),
+                    'avg': stock.calcAverage(prices),
+                    'min': Math.min.apply(null, prices),
+                    'max': Math.max.apply(null, prices),
+                    'current': prices[prices.length-1]
                 };
             }
         };

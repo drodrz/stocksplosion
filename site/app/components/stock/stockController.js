@@ -11,13 +11,13 @@ angular.module('StocksplosionApp')
         };
 
         $scope.companySelected = function(selected) {
-            var window = stock.selectWindow(30);
+            var window = stock.selectWindow(21);
             Restangular.one('company', selected.title)
                 .get({startdate:window.start, enddate:window.end})
                 .then(function(company) {
                     $scope.graph = stock.populateGraphData(company);
                 }), function(error) {
-                $scope.errors['company'] = error;
+                    $scope.errors['company'] = error;
                 };
         };
     });
