@@ -6,6 +6,7 @@ Stocksplosion is a web app for simplifying your stock market activity.  Featurin
 
 To begin, make sure you have npm installed [0].  After that, you will need to install project dependencies as follows:
 
+    npm install -g grunt-cli
     npm install
     bower install
 
