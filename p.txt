@@ -1,0 +1,32 @@
+Intro
+
+Stocksplosion is a web app for simplifying your stock market activity.  Featuring a dead simple interface, Stocksplosion
+quickly generates a recommendation for you to buy, sell, or hold a particular stock when you enter its name or
+stock ticker in the search bar.
+
+Approach
+
+After a careful reading of the Stocksplosion Project Spec, I began formulating a plan of attack.  Given the customer's
+focus on ease of use, speed, and ROI, I knew I wanted to keep things simple.  The primary interface would be a search
+bar that would allow the user to type either the company name or the stock symbol.  Immediately it was decided that the
+search bar would need to feature look-ahead typing to make the site even easier and faster to use.
+
+Once the company was selected, an api call would retrieve the necessary information to populate a graph, a performance
+summary, and the buy / sell / hold determination.  A quick search yielded a vast amount of potential algorithms for
+predicting the performance of a stock.  Ultimately, none of those approaches were chosen, and instead a naive algorithm
+was developed that required only the current and average stock prices.  The algorithm can easily be replaced for
+something more sophisticated in the future.
+
+The underlying technology stack chosen was the Angular JS framework due to familiarity.  A few helpful modules were
+selected to ease development:  Restangular (easy API calls), Angucomplete-alt (look-ahead searching), and Chart.js
+(pretty graphs).
+
+Cost Breakdown
+
+Initial requirements gathering, planning, research (api, stock algorithms): 2 hr
+Project setup + initial prototype: 3hr
+Project unit testing, refactoring: 3hr
+Styling: 2hr
+Final report, deployment: 2hr
+
+Total cost: 12 * 150 = 1800
