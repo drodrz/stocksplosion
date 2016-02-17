@@ -1,0 +1,29 @@
+# Stocksplosion
+
+Stocksplosion is a web app for simplifying your stock market activity.  Featuring a dead simple interface, Stocksplosion quickly provides generates a recommendation for you to buy, sell, or hold a particular stock when you enter its name or stock ticker in the search bar.
+
+## Installation
+
+To begin, make sure you have npm installed [0].  After that, you will need to install project dependencies as follows:
+
+    npm install
+    bower install
+
+At this point, you are free to move about the cabin.
+
+To run the test suite:
+
+    grunt test
+
+To serve the site, fire up your favorite lightweight http server, for example python:
+
+    cd site
+    python -m http.server 8000
+
+    Next, navigate to localhost:8000 using your browser of choice
+
+If you do not wish to build the project locally, you can view a live demo here:
+
+http://stocksplosion.dannovations.com
+
+[0]: http://blog.npmjs.org/post/85484771375/how-to-install-npm
