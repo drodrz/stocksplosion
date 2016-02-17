@@ -26,7 +26,6 @@ angular.module('StocksplosionApp')
                     advice = 'buy';
                 }
 
-                console.log('ratio:', val, avg, val/avg);
                 return advice;
             },
             'analyzeStock': function(prices) {

@@ -16,9 +16,6 @@
         </div>
         <div>
             <p ng-show="graph.advice" class="alert alert-success advice">{{graph.advice | uppercase }}</p>
-            <!--<p ng-show="graph.advice == 'buy'"  class="alert alert-success fade in">Buy</p>-->
-            <!--<p ng-show="graph.advice == 'sell'" class="alert alert-success">Sell</p>-->
-            <!--<p ng-show="graph.advice == 'hold'" class="alert alert-success">Hold</p>-->
         </div>
         <canvas id="line" class="chart chart-line"
                 chart-data="graph.data"
