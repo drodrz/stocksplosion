@@ -46,7 +46,11 @@ describe("stock", function() {
 
         expect(graphData.data).toEqual([[10,11,12]]);
         expect(graphData.labels).toEqual(['0101','0102','0103']);
-        expect(graphData.advice).toEqual('hold');
+        expect(graphData.advice).toEqual('sell');
+        expect(graphData.current).toEqual(12);
+        expect(graphData.min).toEqual(10);
+        expect(graphData.max).toEqual(12);
+        expect(graphData.avg).toEqual(11);
     });
 
 });
